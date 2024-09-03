@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Implementation in DSA</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* White text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1, h2 {
+            color: #ff9800; /* Orange for headings */
+            font-family: 'Georgia', serif;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        p, li {
+            color: #e0e0e0; /* Light grey text */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        code {
+            display: block;
+            background-color: #2a2a2a; /* Slightly lighter than background */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #ff9800; /* Orange for code */
+            overflow-x: auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        a {
+            color: #ff9900; /* Bright orange for links */
+            text-decoration: none;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="algorithms.html">Algorithms</a>
+            <a href="credits.html">Credits</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Tree Implementation in Data Structures and Algorithms</h1>
+
+        <p>A tree is a hierarchical data structure that consists of nodes connected by edges. It is used to represent hierarchical relationships and is a fundamental concept in computer science.</p>
+
+        <h2>Types of Trees</h2>
+        <ul>
+            <li><strong>Binary Tree:</strong> Each node has at most two children.</li>
+            <li><strong>Binary Search Tree (BST):</strong> A binary tree where the left subtree of a node contains only nodes with values less than the node's key, and the right subtree contains nodes with values greater than the node's key.</li>
+            <li><strong>AVL Tree:</strong> A self-balancing binary search tree where the difference between heights of left and right subtrees cannot be more than one.</li>
+            <li><strong>Red-Black Tree:</strong> A self-balancing binary search tree with additional properties to ensure the tree remains balanced.</li>
+        </ul>
+
+        <h2>Example: Binary Search Tree in C</h2>
+        <p>Here's a simple implementation of a Binary Search Tree (BST) in C:</p>
+
+        <code>
+            #include &lt;stdio.h&gt;
+            #include &lt;stdlib.h&gt;
+
+            // Node structure
+            struct Node {
+                int data;
+                struct Node* left;
+                struct Node* right;
+            };
+
+            // Create a new node
+            struct Node* newNode(int data) {
+                struct Node* node = (struct Node*)malloc(sizeof(struct Node));
+                node->data = data;
+                node->left = NULL;
+                node->right = NULL;
+                return node;
+            }
+
+            // Insert a new node
+            struct Node* insert(struct Node* node, int data) {
+                if (node == NULL) return newNode(data);
+
+                if (data < node->data)
+                    node->left = insert(node->left, data);
+                else if (data > node->data)
+                    node->right = insert(node->right, data);
+
+                return node;
+            }
+
+            // Inorder traversal
+            void inorder(struct Node* root) {
+                if (root != NULL) {
+                    inorder(root->left);
+                    printf("%d ", root->data);
+                    inorder(root->right);
+                }
+            }
+
+            int main() {
+                struct Node* root = NULL;
+                root = insert(root, 50);
+                insert(root, 30);
+                insert(root, 20);
+                insert(root, 40);
+                insert(root, 70);
+                insert(root, 60);
+                insert(root, 80);
+
+                printf("Inorder traversal of the binary search tree:\n");
+                inorder(root);
+                printf("\n");
+
+                return 0;
+            }
+        </code>
+
+        <p>This code snippet demonstrates the creation of a Binary Search Tree and performs an inorder traversal to print the tree elements.</p>
+
+        <div class="footer">
+            <p>For more information on DSA, please visit the <a href="algorithms.html">Algorithms</a> page or <a href="contact.html">Contact Us</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
