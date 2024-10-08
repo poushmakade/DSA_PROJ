@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview on Hashing</title>
+</head>
+<style>
+    body {
+        background-color: #121212; /* Dark background */
+        color: #ffffff; /* White text */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #1f1f1f;
+        padding: 20px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    .credits ul {
+list-style-type: none;
+padding: 0;
+text-decoration: none;
+}
+
+.credits li {
+background-color: #333333;
+margin: 10px 0;
+padding: 10px;
+border-radius: 5px;
+transition: transform 0.3s ease;
+}
+
+.credits li:hover {
+transform: translateX(10px);
+}
+
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #ff9800;
+        transform: scale(1.1);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #1f1f1f;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1, h2 {
+        color: #ff9800; /* Orange for headings */
+        font-family: 'Georgia', serif;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    p, li {
+        color: #e0e0e0; /* Light grey text */
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    code {
+        display: block;
+        background-color: #2a2a2a; /* Slightly lighter than background */
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #ff9800; /* Orange for code */
+        overflow-x: auto;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    a {
+        color: #ff9900; /* Bright orange for links */
+        text-decoration: none;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #888;
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+</style>
+<body>
+    <h1>Overview Of Hashing in Data Structures...</h1>
+</header>
+<main>
+    <h2>What is Hashing?</h2>
+    <p>Hashing is a process of converting a given key into another value. A hash function is used to generate the new value according to a mathematical algorithm. This new value is known as a hash value or hash code. Hashing is a common technique used to store and retrieve data efficiently in various data structures like hash tables.</p>
+
+    <h2>Hash Function</h2>
+    <p>The hash function is a key component of hashing. It takes an input (or 'key') and returns an integer value, which is usually used as an index to locate the associated data in a hash table.</p>
+
+    <h2>Hash Collisions</h2>
+    <p>Hash collisions occur when two different keys generate the same hash value. Collisions are handled using various techniques, such as chaining, open addressing, or double hashing.</p>
+
+    <h2>Common Applications of Hashing</h2>
+    <ul>
+        <li>Database indexing</li>
+        <li>Cryptography</li>
+        <li>Data retrieval</li>
+        <li>Cache mechanisms</li>
+    </ul>
+
+    <h2>Advantages of Hashing</h2>
+    <ul>
+        <li>Fast data retrieval</li>
+        <li>Efficient use of memory</li>
+        <li>Easy to implement</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Hashing is a powerful tool in computer science, used to store and retrieve data efficiently. Understanding how hashing works and how to handle collisions is essential for designing effective algorithms and data structures.</p>
+</main>
+
+</body>
+</html>

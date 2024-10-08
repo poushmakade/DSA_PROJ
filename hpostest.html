@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posttest on Hashing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6600;
+        }
+
+        .section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px; /* Gap between questions */
+        }
+
+        .question label {
+            font-size: 1.2em; /* Make question text bigger */
+            color: #ff6600;
+        }
+
+        .question input {
+            margin: 5px;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Style for the whole page */
+        body {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .section {
+            background-color: #222;
+            color: #fff;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+            transform: scale(1.1);
+        }
+
+    </style>
+ <nav>
+    <a href="index.html">Home</a>
+    <a href="algorithms.html">Algorithms</a>
+    <a href="credits.html">Credits</a>
+    <a href="contact.html">Contact</a>
+</nav>
+    <section id="posttest" class="section">
+        <h1>Posttest: Hashing</h1>
+        <form id="posttest-form">
+          <!-- Question 1 -->
+          <div class="question">
+            <label>1. Which method handles hash collisions?</label><br>
+            <input type="radio" name="q1" value="correct"> Chaining<br>
+            <input type="radio" name="q1" value="wrong"> Sorting<br>
+          </div>
+          <!-- Question 2 -->
+          <div class="question">
+            <label>2. Which hash function is known to cause fewer collisions?</label><br>
+            <input type="radio" name="q2" value="wrong"> Simple modulus function<br>
+            <input type="radio" name="q2" value="correct"> Universal hash function<br>
+          </div>
+          <!-- Question 3 -->
+          <div class="question">
+            <label>3. What is the time complexity of inserting an element in a hash table on average?</label><br>
+            <input type="radio" name="q3" value="wrong"> O(n)<br>
+            <input type="radio" name="q3" value="correct"> O(1)<br>
+          </div>
+          <!-- Question 4 -->
+          <div class="question">
+            <label>4. Which of the following is NOT a method to handle hash collisions?</label><br>
+            <input type="radio" name="q4" value="correct"> Insertion Sort<br>
+            <input type="radio" name="q4" value="wrong"> Open Addressing<br>
+          </div>
+          <!-- Question 5 -->
+          <div class="question">
+            <label>5. What happens when the load factor exceeds a threshold in a hash table?</label><br>
+            <input type="radio" name="q5" value="correct"> Rehashing<br>
+            <input type="radio" name="q5" value="wrong"> Sorting<br>
+          </div>
+          <!-- Question 6 -->
+          <div class="question">
+            <label>6. Which of the following has the best time complexity for searching?</label><br>
+            <input type="radio" name="q6" value="wrong"> Binary Search Tree<br>
+            <input type="radio" name="q6" value="correct"> Hash Table<br>
+          </div>
+          <!-- Question 7 -->
+          <div class="question">
+            <label>7. What does a perfect hash function ensure?</label><br>
+            <input type="radio" name="q7" value="correct"> No collisions<br>
+            <input type="radio" name="q7" value="wrong"> Sorted order<br>
+          </div>
+          <!-- Question 8 -->
+          <div class="question">
+            <label>8. What is double hashing?</label><br>
+            <input type="radio" name="q8" value="correct"> Using two hash functions<br>
+            <input type="radio" name="q8" value="wrong"> Sorting twice<br>
+          </div>
+          <!-- Question 9 -->
+          <div class="question">
+            <label>9. Why is rehashing important?</label><br>
+            <input type="radio" name="q9" value="correct"> To avoid high load factor<br>
+            <input type="radio" name="q9" value="wrong"> To sort the elements<br>
+          </div>
+          <!-- Question 10 -->
+          <div class="question">
+            <label>10. Which of the following is true about hash tables?</label><br>
+            <input type="radio" name="q10" value="correct"> Hash tables offer constant-time lookup on average<br>
+            <input type="radio" name="q10" value="wrong"> Hash tables offer linear-time lookup<br>
+          </div>
+    
+          <button type="button" class="submit-btn" onclick="submitTest('pretest')">Submit Pretest</button>
+      </form>
+    </section>
+
+    <style src="scripts.js"></style>
+</body>
+</html>

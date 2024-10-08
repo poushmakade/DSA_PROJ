@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretest on Hashing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6600;
+        }
+
+        .section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px; /* Gap between questions */
+        }
+
+        .question label {
+            font-size: 1.2em; /* Make question text bigger */
+            color: #ff6600;
+        }
+
+        .question input {
+            margin: 5px;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Style for the whole page */
+        body {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .section {
+            background-color: #222;
+            color: #fff;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="algorithms.html">Algorithms</a>
+        <a href="credits.html">Credits</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <section id="pretest" class="section">
+        <h1>Pretest: Hashing</h1>
+        <form id="pretest-form">
+          <!-- Question 1 -->
+          <div class="question">
+            <label>1. What is a hash function?</label><br>
+            <input type="radio" name="q1" value="wrong"> Function for sorting<br>
+            <input type="radio" name="q1" value="correct"> Function for mapping<br>
+          </div>
+          <!-- Question 2 -->
+          <div class="question">
+            <label>2. Hashing is used for?</label><br>
+            <input type="radio" name="q2" value="wrong"> Sorting data<br>
+            <input type="radio" name="q2" value="correct"> Searching efficiently<br>
+          </div>
+          <!-- Question 3 -->
+          <div class="question">
+            <label>3. What is the time complexity of search in a hash table (on average)?</label><br>
+            <input type="radio" name="q3" value="wrong"> O(n)<br>
+            <input type="radio" name="q3" value="correct"> O(1)<br>
+          </div>
+          <!-- Question 4 -->
+          <div class="question">
+            <label>4. What is the primary problem that hashing solves?</label><br>
+            <input type="radio" name="q4" value="correct"> Efficient searching<br>
+            <input type="radio" name="q4" value="wrong"> Sorting large datasets<br>
+          </div>
+          <!-- Question 5 -->
+          <div class="question">
+            <label>5. Which of the following is a good property of a hash function?</label><br>
+            <input type="radio" name="q5" value="wrong"> Produces same output for different inputs<br>
+            <input type="radio" name="q5" value="correct"> Produces a uniform distribution of hash values<br>
+          </div>
+          <!-- Question 6 -->
+          <div class="question">
+            <label>6. What happens if two keys hash to the same value?</label><br>
+            <input type="radio" name="q6" value="correct"> A collision occurs<br>
+            <input type="radio" name="q6" value="wrong"> Both keys are stored<br>
+          </div>
+          <!-- Question 7 -->
+          <div class="question">
+            <label>7. Which data structure uses hashing?</label><br>
+            <input type="radio" name="q7" value="wrong"> Stack<br>
+            <input type="radio" name="q7" value="correct"> Hash Table<br>
+          </div>
+          <!-- Question 8 -->
+          <div class="question">
+            <label>8. What is load factor in hashing?</label><br>
+            <input type="radio" name="q8" value="correct"> Ratio of number of elements to table size<br>
+            <input type="radio" name="q8" value="wrong"> Ratio of table size to number of elements<br>
+          </div>
+          <!-- Question 9 -->
+          <div class="question">
+            <label>9. What is the main advantage of using a hash table over a tree?</label><br>
+            <input type="radio" name="q9" value="wrong"> Better sorting performance<br>
+            <input type="radio" name="q9" value="correct"> Faster search performance<br>
+          </div>
+          <!-- Question 10 -->
+          <div class="question">
+            <label>10. What is the issue with hash collisions?</label><br>
+            <input type="radio" name="q10" value="correct"> It degrades the performance<br>
+            <input type="radio" name="q10" value="wrong"> It improves search speed<br>
+          </div>
+
+          <button type="button" onclick="submitTest('pretest')">Submit Pretest</button>
+        </form>
+        <div id="pretest-feedback"></div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
