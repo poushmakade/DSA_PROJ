@@ -182,4 +182,362 @@
         </div>
     </div>
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Implementation in DSA</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* White text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1, h2, h3 {
+            color: #ff9800; /* Orange for headings */
+            font-family: 'Georgia', serif;
+        }
+
+        p, li {
+            color: #e0e0e0; /* Light grey text */
+        }
+
+        code {
+            display: block;
+            background-color: #2a2a2a; /* Slightly lighter than background */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #ff9800; /* Orange for code */
+            overflow-x: auto;
+        }
+
+        a {
+            color: #ff9900; /* Bright orange for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+
+        /* Tree Visualization Styles */
+        .tree-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+        }
+
+        circle {
+            fill: #ff9800; /* Orange nodes */
+        }
+
+        text {
+            fill: #ffffff;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #ff9800;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e68a00;
+        }
+
+        .created-by {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="algorithms.html">Algorithms</a>
+            <a href="credits.html">Credits</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Tree Implementation in Data Structures and Algorithms</h1>
+
+        <p>A tree is a hierarchical data structure that consists of nodes connected by edges. It is used to represent hierarchical relationships and is a fundamental concept in computer science.</p>
+
+        <h2>Types of Trees</h2>
+        <ul>
+            <li><strong>Binary Tree:</strong> Each node has at most two children.</li>
+            <li><strong>Binary Search Tree (BST):</strong> A binary tree where the left subtree of a node contains only nodes with values less than the node's key, and the right subtree contains nodes with values greater than the node's key.</li>
+            <li><strong>AVL Tree:</strong> A self-balancing binary search tree where the difference between heights of left and right subtrees cannot be more than one.</li>
+            <li><strong>Red-Black Tree:</strong> A self-balancing binary search tree with additional properties to ensure the tree remains balanced.</li>
+            <li><strong>N-ary Tree:</strong> A tree data structure where a node can have at most N children.</li>
+        </ul>
+
+        <h2>Tree Visualization Example</h2>
+        <p>Below are graphical representations of Binary Search Tree and AVL Tree.</p>
+
+        <!-- Binary Search Tree Visualization SVG -->
+        <div class="tree-container">
+            <svg viewBox="0 0 500 500" id="bst-visual">
+                <line x1="250" y1="100" x2="150" y2="200" stroke="white" stroke-width="2"/>
+                <line x1="250" y1="100" x2="350" y2="200" stroke="white" stroke-width="2"/>
+                <circle cx="250" cy="100" r="20"></circle>
+                <text x="245" y="105">50</text>
+
+                <line x1="150" y1="200" x2="100" y2="300" stroke="white" stroke-width="2"/>
+                <line x1="150" y1="200" x2="200" y2="300" stroke="white" stroke-width="2"/>
+                <circle cx="150" cy="200" r="20"></circle>
+                <text x="145" y="205">30</text>
+
+                <line x1="350" y1="200" x2="300" y2="300" stroke="white" stroke-width="2"/>
+                <line x1="350" y1="200" x2="400" y2="300" stroke="white" stroke-width="2"/>
+                <circle cx="350" cy="200" r="20"></circle>
+                <text x="345" y="205">70</text>
+            </svg>
+        </div>
+
+        <h3>Binary Search Tree (BST) Example in C</h3>
+        <code>
+            <span style="color: #ff9800;">#include &lt;stdio.h&gt;</span><br>
+            <span style="color: #ff9800;">#include &lt;stdlib.h&gt;</span><br><br>
+            <span style="color: #ff9800;">// Node structure</span><br>
+            <span style="color: #00ffff;">struct Node {</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ff00;">int data;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node* left;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node* right;</span><br>
+            <span style="color: #00ffff;">};</span><br><br>
+
+            <span style="color: #00ffff;">// Create a new node</span><br>
+            <span style="color: #00ffff;">struct Node*</span> newNode(<span style="color: #00ff00;">int</span> data) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node*</span> node = (<span style="color: #00ffff;">struct Node*</span>)malloc(sizeof(struct Node));<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;node-&gt;data = data;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;node-&gt;left = NULL;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;node-&gt;right = NULL;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return node;<br>
+            }<br><br>
+
+            <span style="color: #00ffff;">// Insert a new node</span><br>
+            <span style="color: #00ffff;">struct Node*</span> insert(<span style="color: #00ffff;">struct Node*</span> node, <span style="color: #00ff00;">int</span> data) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (node == NULL) return newNode(data);<br>
+            <span style="color: #00ff00;">if</span> (data &lt; node-&gt;data)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node-&gt;left = insert(node-&gt;left, data);<br>
+            <span style="color: #00ff00;">else if</span> (data &gt; node-&gt;data)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node-&gt;right = insert(node-&gt;right, data);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return node;<br>
+            }<br><br>
+
+            <span style="color: #00ffff;">// Inorder traversal</span><br>
+            <span style="color: #00ffff;">void</span> inorder(<span style="color: #00ffff;">struct Node*</span> root) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (root != NULL) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inorder(root-&gt;left);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;%d &quot;, root-&gt;data);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inorder(root-&gt;right);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }<br><br>
+
+            <span style="color: #00ffff;">int</span> main() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node*</span> root = NULL;<br>
+            root = insert(root, 50);<br>
+            insert(root, 30);<br>
+            insert(root, 20);<br>
+            insert(root, 40);<br>
+            insert(root, 70);<br>
+            insert(root, 60);<br>
+            insert(root, 80);<br><br>
+
+            printf(&quot;Inorder traversal of the binary search tree:\n&quot;);<br>
+            inorder(root);<br>
+            printf(&quot;\n&quot;);<br><br>
+
+            <span style="color: #00ffff;">return</span> 0;<br>
+            }
+        </code>
+
+        <h2>AVL Tree Visualization Example</h2>
+        <div class="tree-container">
+            <svg viewBox="0 0 500 500" id="avl-visual">
+                <line x1="250" y1="100" x2="150" y2="200" stroke="white" stroke-width="2"/>
+                <line x1="250" y1="100" x2="350" y2="200" stroke="white" stroke-width="2"/>
+                <circle cx="250" cy="100" r="20"></circle>
+                <text x="245" y="105">30</text>
+
+                <line x1="150" y1="200" x2="100" y2="300" stroke="white" stroke-width="2"/>
+                <line x1="150" y1="200" x2="200" y2="300" stroke="white" stroke-width="2"/>
+                <circle cx="150" cy="200" r="20"></circle>
+                <text x="145" y="205">20</text>
+
+                <line x1="150" y1="200" x2="180" y2="300" stroke="white" stroke-width="2"/>
+                <line x1="350" y1="200" x2="300" y2="300" stroke="white" stroke-width="2"/>
+                <circle cx="350" cy="200" r="20"></circle>
+                <text x="345" y="205">40</text>
+                <circle cx="350" cy="100" r="20"></circle>
+                <text x="345" y="105">60</text>
+            </svg>
+        </div>
+
+        <h3>AVL Tree Example in C</h3>
+        <code>
+            <span style="color: #ff9800;">#include &lt;stdio.h&gt;</span><br>
+            <span style="color: #ff9800;">#include &lt;stdlib.h&gt;</span><br>
+            <span style="color: #ff9800;">#include &lt;math.h&gt;</span><br><br>
+            <span style="color: #00ffff;">struct Node {</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ff00;">int data;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node* left;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node* right;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">int height;</span><br>
+            <span style="color: #00ffff;">};</span><br><br>
+
+            <span style="color: #00ffff;">int</span> height(<span style="color: #00ffff;">struct Node*</span> node) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">return</span> (node == NULL) ? 0 : node-&gt;height;<br>
+            }<br><br>
+
+            <span style="color: #00ffff;">int</span> balanceFactor(<span style="color: #00ffff;">struct Node*</span> node) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">return</span> (node == NULL) ? 0 : height(node-&gt;left) - height(node-&gt;right);<br>
+            }<br><br>
+
+            <span style="color: #00ffff;">struct Node*</span> rightRotate(<span style="color: #00ffff;">struct Node*</span> y) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node*</span> x = y-&gt;left;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node*</span> T2 = x-&gt;right;<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;x-&gt;right = y;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;y-&gt;left = T2;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;y-&gt;height = fmax(height(y-&gt;left), height(y-&gt;right)) + 1;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;x-&gt;height = fmax(height(x-&gt;left), height(x-&gt;right)) + 1;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return x;<br>
+            }<br><br>
+
+            <span style="color: #00ffff;">struct Node*</span> leftRotate(<span style="color: #00ffff;">struct Node*</span> x) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node*</span> y = x-&gt;right;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node*</span> T2 = y-&gt;left;<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;y-&gt;left = x;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;x-&gt;right = T2;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;x-&gt;height = fmax(height(x-&gt;left), height(x-&gt;right)) + 1;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;y-&gt;height = fmax(height(y-&gt;left), height(y-&gt;right)) + 1;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return y;<br>
+            }<br><br>
+
+            <span style="color: #00ffff;">struct Node*</span> insert(<span style="color: #00ffff;">struct Node*</span> node, <span style="color: #00ff00;">int</span> data) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (node == NULL) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return newNode(data);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (data &lt; node-&gt;data)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node-&gt;left = insert(node-&gt;left, data);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;else if (data &gt; node-&gt;data)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node-&gt;right = insert(node-&gt;right, data);<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;node-&gt;height = 1 + fmax(height(node-&gt;left), height(node-&gt;right));<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;int balance = balanceFactor(node);<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (balance &gt; 1 &amp;&amp; data &lt; node-&gt;left-&gt;data)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return rightRotate(node);<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (balance &lt; -1 &amp;&amp; data &gt; node-&gt;right-&gt;data)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return leftRotate(node);<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (balance &gt; 1 &amp;&amp; data &gt; node-&gt;left-&gt;data) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node-&gt;left = leftRotate(node-&gt;left);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return rightRotate(node);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (balance &lt; -1 &amp;&amp; data &lt; node-&gt;right-&gt;data) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node-&gt;right = rightRotate(node-&gt;right);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return leftRotate(node);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return node;<br>
+            }<br><br>
+
+            <span style="color: #00ffff;">int</span> main() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #00ffff;">struct Node*</span> root = NULL;<br>
+            root = insert(root, 10);<br>
+            root = insert(root, 20);<br>
+            root = insert(root, 30);<br>
+            root = insert(root, 40);<br>
+            root = insert(root, 50);<br>
+            root = insert(root, 25);<br><br>
+
+            printf(&quot;Inorder traversal of the AVL tree:\n&quot;);<br>
+            inorder(root);<br>
+            printf(&quot;\n&quot;);<br><br>
+
+            <span style="color: #00ffff;">return</span> 0;<br>
+            }
+        </code>
+    </div>
+
+    <div class="footer">Created by Mohit</div>
+</body>
 </html>
