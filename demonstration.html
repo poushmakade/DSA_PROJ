@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed YouTube Video</title>
+    <style>
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Optional: centers vertically, adjust as needed */
+        }
+        iframe {
+            max-width: 100%;
+            height: 500px; /* Adjust the height as necessary */
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe width="100%" height="600" 
+            src="https://www.youtube.com/embed/W5q0xgxmRd8" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</body>
+</html>
