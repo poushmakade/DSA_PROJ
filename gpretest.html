@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretest on Graphs :</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6600;
+        }
+
+        .section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px; /* Gap between questions */
+        }
+
+        .question label {
+            font-size: 1.2em; /* Make question text bigger */
+            color: #ff6600;
+        }
+
+        .question input {
+            margin: 5px;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Style for the whole page */
+        body {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .section {
+            background-color: #222;
+            color: #fff;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="algorithms.html">Algorithms</a>
+        <a href="credits.html">Credits</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <section id="pretest" class="section">
+        <h1>Pretest: Graphs</h1>
+        <form id="pretest-form">
+          <!-- Question 1 -->
+          <div class="question">
+            <label>1. What is type of data structure is a Graph?</label><br>
+            <input type="radio" name="q1" value="wrong"> Linear data structure.<br>
+            <input type="radio" name="q1" value="correct"> Non-linear data structure.<br>
+          </div>
+          <!-- Question 2 -->
+          <div class="question">
+            <label>2. Graph is used for?</label><br>
+            <input type="radio" name="q2" value="wrong"> Social networks.<br>
+            <input type="radio" name="q2" value="correct"> Searching.<br>
+          </div>
+          <!-- Question 3 -->
+          <div class="question">
+            <label>3. What is the advantage of graph?</label><br>
+            <input type="radio" name="q3" value="wrong"> Visualization.<br>
+            <input type="radio" name="q3" value="correct"> Scalability.<br>
+          </div>
+          <!-- Question 4 -->
+          <div class="question">
+            <label>4. What is the disadvantage of graph?</label><br>
+            <input type="radio" name="q4" value="correct"> Visualization.<br>
+            <input type="radio" name="q4" value="wrong"> Scalability.<br>
+          </div>
+          <!-- Question 5 -->
+          <div class="question">
+            <label>5. In which of the following data structures, you can traverse in only one direction?</label><br>
+            <input type="radio" name="q5" value="wrong"> Undirected-graph.<br>
+            <input type="radio" name="q5" value="correct"> Directed-graph.<br>
+          </div>
+          <!-- Question 6 -->
+          <div class="question">
+            <label>6. If m & n represent the number of vertices & edges respectively, then which one of the following can not be true?</label><br>
+            <input type="radio" name="q6" value="correct"> m greater than n.<br>
+            <input type="radio" name="q6" value="wrong"> m less than n.<br>
+          </div>
+
+          <button type="button" onclick="submitTest('pretest')">Submit Pretest</button>
+        </form>
+        <div id="pretest-feedback"></div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

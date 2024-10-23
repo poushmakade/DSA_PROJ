@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview of Graph</title>
+</head>
+<style>
+    body {
+        background-color: #121212; /* Dark background */
+        color: #ffffff; /* White text */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #1f1f1f;
+        padding: 20px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    .credits ul {
+list-style-type: none;
+padding: 0;
+text-decoration: none;
+}
+
+.credits li {
+background-color: #333333;
+margin: 10px 0;
+padding: 10px;
+border-radius: 5px;
+transition: transform 0.3s ease;
+}
+
+.credits li:hover {
+transform: translateX(10px);
+}
+
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #ff9800;
+        transform: scale(1.1);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #1f1f1f;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1, h2 {
+        color: #ff9800; /* Orange for headings */
+        font-family: 'Georgia', serif;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    p, li {
+        color: #e0e0e0; /* Light grey text */
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    code {
+        display: block;
+        background-color: #2a2a2a; /* Slightly lighter than background */
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #ff9800; /* Orange for code */
+        overflow-x: auto;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    a {
+        color: #ff9900; /* Bright orange for links */
+        text-decoration: none;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #888;
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+</style>
+<body>
+    <h1>Overview Of Graph in Data Structures</h1>
+</header>
+<main>
+    <h2>Definition :</h2>
+    <p>A graph is a non-linear kind of data structure made up of nodes or vertices and edges. The edges connect any two nodes in the graph, and the nodes are also known as vertices. It is a pictorial representation of a set of objects where some pairs of objects are connected by links.</p>
+
+    <h2>Types of Graphs :</h2>
+    <p>There are 2 types of graphs :<br>1) Directed Graphs.<br>2) Undirected Graphs.</p>
+
+    <h2>Undirected Graphs :</h2>
+    <p><img src="undirected-graph.png"></p>
+
+    <h2>Directed Graphs :</h2>
+    <p><img src="directed-graph.png"></p>
+
+    <h2>Use of Graphs :</h2>
+    <p>Graphs are used to represent and solve problems where the data consists of objects and relationships between them, such as:<br>
+    Social Networks: Each person is a vertex, and relationships (like friendships) are the edges. Algorithms can suggest potential friends.<br>
+    Maps and Navigation: Locations, like a town or bus stops, are stored as vertices, and roads are stored as edges. Algorithms can find the shortest route between two locations when stored as a Graph.<br>
+    Internet: Can be represented as a Graph, with web pages as vertices and hyperlinks as edges.<br>
+    Biology: Graphs can model systems like neural networks or the spread of diseases</p>
+
+    <h2>Advantages of Graphs :</h2>
+    <p>Representing complex data : Graphs are effective tools for representing complex data, especially when the relationships between the data points are not straightforward. They can help to uncover patterns, trends, and insights that may be difficult to see using other methods.<br>
+    Path finding : Graphs can be used to find the shortest path between two points, which is a common problem in computer science, logistics, and transportation planning.<br>
+    Visualization : Graphs are highly visual, making it easy to communicate complex data and relationships in a clear and concise way. This makes them useful for presentations, reports, and data analysis.</p>
+
+    <h2>Disadvantages of Graphs :</h2>
+    <p>Difficulty in interpretation : Graphs can be difficult to interpret, especially if they are large or complex. This can make it challenging to extract meaningful insights from the data, and may require advanced analytical techniques or domain expertise.<br>
+    Scalability issues : As the number of nodes and edges in a graph increases, the processing time and memory required to analyze it also increases. This can make it difficult to work with large or complex graphs.<br>
+    Lack of standardization : There are many different types of graphs, and each has its own strengths and weaknesses. This can make it difficult to compare graphs from different sources, or to choose the best type of graph for a given analysis.</p>
+</main>
+
+</body>
+</html>

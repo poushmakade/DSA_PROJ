@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview of Graph</title>
+</head>
+<style>
+    body {
+        background-color: #121212; /* Dark background */
+        color: #ffffff; /* White text */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #1f1f1f;
+        padding: 20px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    .credits ul {
+list-style-type: none;
+padding: 0;
+text-decoration: none;
+}
+
+.credits li {
+background-color: #333333;
+margin: 10px 0;
+padding: 10px;
+border-radius: 5px;
+transition: transform 0.3s ease;
+}
+
+.credits li:hover {
+transform: translateX(10px);
+}
+
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #ff9800;
+        transform: scale(1.1);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #1f1f1f;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1, h2 {
+        color: #ff9800; /* Orange for headings */
+        font-family: 'Georgia', serif;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    p, li {
+        color: #e0e0e0; /* Light grey text */
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    code {
+        display: block;
+        background-color: #2a2a2a; /* Slightly lighter than background */
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #ff9800; /* Orange for code */
+        overflow-x: auto;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    a {
+        color: #ff9900; /* Bright orange for links */
+        text-decoration: none;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #888;
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+</style>
+<body>
+    <h1>Theory :</h1>
+</header>
+<main>
+    <p>A graph is a non-linear kind of data structure made up of nodes or vertices and edges. The edges connect any two nodes in the graph, and the nodes are also known as vertices. It is a pictorial representation of a set of objects where some pairs of objects are connected by links. More formally a Graph is composed of a set of vertices(V) and a set of edges(E). The graph is denoted by G(V, E).</p>
+
+    <h2>Components of graph :</h2>
+    <p>Vertices: Vertices are the fundamental units of the graph. Sometimes, vertices are also known as vertex or nodes. Every node/vertex can be labeled or unlabelled.<br>
+    Edges: Edges are drawn or used to connect two nodes of the graph. It can be ordered pair of nodes in a directed graph. Edges can connect any two nodes in any possible way. There are no rules. Sometimes, edges are also known as arcs. Every edge can be labelled/unlabelled.</p>
+
+    <h2>Difference between trees and graphs :</h2>
+    <p>Tree is a restricted type of Graph Data Structure, just with some more rules. Every tree will always be a graph but not all graphs will be trees. Linked List, Trees, and Heaps all are special cases of graphs.<br>
+    <img src="Screenshot 2024-10-23 12.38.20 PM.png"></p>
+
+    <h2>Representation of Graphs :</h2>
+    <p>Graphs can be represented in 2 ways :<br>
+    Adjacency Matrix.<br>
+    Adjacency List.</p>
+
+    <h3>Adjacency Matrix :</h3>
+    <p>In this method, the graph is stored in the form of the 2D matrix where rows and columns denote vertices. Each entry in the matrix represents the weight of the edge between those vertices.</p>
+    <h3>Adjacency List :</h3>
+    <p>This graph is represented as a collection of linked lists. There is an array of pointer which points to the edges connected to that vertex.</p>
+
+    <h2>Properties of Graphs :</h2>
+    <p>Vertices : The points where edges meet in a graph are known as vertices or nodes. A vertex can represent a physical object, concept, or abstract entity.<br>
+    Edges : The connections between vertices are known as edges. They can be undirected (bidirectional) or directed (unidirectional).<br>
+    Degree : The degree of a vertex is the number of edges that connect to it. In a directed graph, the in-degree of a vertex is the number of edges that point to it, and the out-degree is the number of edges that start from it.<br>
+    Path : A path is a sequence of vertices that are connected by edges. A simple path does not contain any repeated vertices or edges.<br>
+    Cycle : A cycle is a path that starts and ends at the same vertex. A simple cycle does not contain any repeated vertices or edges.</p>
+
+    <h2>Graph Traversal :</h2>
+    <p>There are 2 ways of graph traversal :<br>
+    Breadth First search(BFS)<br>
+    Depth First Search(DFS)</p>
+
+    <h2>Breadth First Search :</h2>
+    <p>Breadth First Search (BFS) is a fundamental graph traversal algorithm. It begins with a node, then first traverses all its adjacent. Once all adjacent are visited, then their adjacent are traversed. This is different from DFS in a way that closest vertices are visited before others. We mainly traverse vertices level by level. A lot of popular graph algorithms like Dijkstra’s shortest path, Kahn’s Algorithm, and Prim’s algorithm are based on BFS. BFS itself can be used to detect cycle in a directed and undirected graph, find shortest path in an unweighted graph and many more problems.</p>
+
+    <h2>Depth First Search :</h2>
+    <p>Depth First Traversal (or DFS) for a graph is similar to Depth First Traversal of a tree. Like trees, we traverse all adjacent vertices one by one. When we traverse an adjacent vertex, we completely finish the traversal of all vertices reachable through that adjacent vertex. After we finish traversing one adjacent vertex and its reachable vertices, we move to the next adjacent vertex and repeat the process. This is similar to a tree, where we first completely traverse the left subtree and then move to the right subtree. The key difference is that, unlike trees, graphs may contain cycles (a node may be visited more than once). To avoid processing a node multiple times, we use a boolean visited array.</p>
+
+    <h2>Difference between BFS and DFS :</h2>
+    <p>Breadth-First Search (BFS) and Depth-First Search (DFS) are two fundamental algorithms used for traversing or searching graphs and trees.<br>
+    <img src="Screenshot 2024-10-23 12.48.08 PM.png"></p>
+    
+</main>
