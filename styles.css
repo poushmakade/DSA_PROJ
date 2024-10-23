@@ -1,156 +1,83 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #1f1f1f;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    animation: fadeInUp 1s ease-in-out;
+h1, h2, h3 {
+    text-align: center;
+    color: #2c3e50;
 }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav a:hover {
-    color: #ff9800;
-    transform: scale(1.1);
-}
-
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #1f1f1f;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 30px;
+.content {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 20px;
     border-radius: 8px;
-    animation: fadeIn 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
+.subsection {
+    margin-top: 40px;
+}
+
+.video-section {
+    background-color: #eafaf1;
+    border: 2px solid #27ae60;
+    padding: 15px;
+    margin: 20px 0;
     text-align: center;
-    color: #ff9800;
-    margin-bottom: 20px;
-    font-family: 'Georgia', serif;
 }
 
-.description h2 {
-    text-align: center;
-    color: #ffb74d;
-    margin-bottom: 20px;
-    font-family: 'Georgia', serif;
+.video-section a {
+    color: #27ae60;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-.description p {
-    text-align: center;
-    margin-bottom: 30px;
+.footer {
+    text-align: right;
+    margin-top: 30px;
+    color: #888;
+    font-size: 12px;
 }
 
-.credits {
-    margin-bottom: 30px;
+.code {
+    background-color: #f8f8f8;
+    border-left: 3px solid #27ae60;
+    padding: 10px;
+    margin: 20px 0;
+    overflow-x: auto;
 }
 
-.credits h2 {
-    color: #ff9800;
-    margin-bottom: 15px;
-}
-
-.credits ul {
-    list-style-type: none;
-    padding: 0;
-    text-decoration: none;
-}
-
-.credits li {
-    background-color: #333333;
+button {
     margin: 10px 0;
     padding: 10px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
     border-radius: 5px;
-    transition: transform 0.3s ease;
-    text-decoration: none;
+    cursor: pointer;
 }
 
-.credits li:hover {
-    transform: translateX(10px);
+button:hover {
+    background-color: #219150;
 }
 
-.credit {
-    margin-bottom: 30px;
-  
-    background-color: #242222;
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    align-items: center;
+.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
 }
 
-.credit h2 {
-    color: #ff9800;
-    margin-bottom: 15px;
+.dark-mode .content {
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.credit ul {
-    list-style-type: none;
-    padding: 0;
-    text-decoration: none;
-}
-
-.credit li {
-    background-color: #ff9800;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-    text-decoration: none;
-}
-
-.credit li:hover {
-    transform: translateX(10px);
-}
-
-footer {
-    text-align: center;
-    margin-top: 20px;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.learn-more {
-    display: inline-block;
-    background-color: #ff9800;
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.learn-more:hover {
-    background-color: #ffb74d;
-}
-
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.dark-mode .footer {
+    color: #ddd;
 }
