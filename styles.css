@@ -1,12 +1,14 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f6e4e4;
-    color: #f8f1f1;
+    color: #575656;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
-
+list{
+    color: #141414;
+}
 nav {
     display: flex;
     justify-content: center;
