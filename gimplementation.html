@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Visualization with Canvas</title>
+    <style src="styles.css">
+        
+        canvas {
+            border: 1px solid #000;
+            background-color: #738484;
+        }
+        #output {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Graph Representation with Multiple Traversal Algorithms</h2>
+<canvas id="graphCanvas" width="600" height="400"></canvas>
+
+<!-- Traversal Selection Dropdown -->
+<label for="traversalType">Choose Traversal Type:</label>
+<select id="traversalType">
+    <option value="bfs">BFS</option>
+    <option value="dfsPreorder">DFS Preorder</option>
+    <option value="dfsPostorder">DFS Postorder</option>
+</select>
+<button onclick="performTraversal()">Perform Traversal</button>
+
+<p id="output">Traversal Output:</p>
+
+<script>
+    // Graph data (adjacency list)
+    const graph = {
+        'A': ['B', 'C'],
+        'B': ['A', 'D', 'E'],
+        'C': ['A', 'F'],
+        'D': ['B'],
+        'E': ['B', 'F'],
+        'F': ['C', 'E']
+    };
+
+    // Node positions for visual layout
+    const positions = {
+        'A': {x: 100, y: 100},
+        'B': {x: 200, y: 150},
+        'C': {x: 100, y: 250},
+        'D': {x: 300, y: 100},
+        'E': {x: 300, y: 250},
+        'F': {x: 400, y: 150}
+    };
+
+    const canvas = document.getElementById("graphCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Draw nodes and edges
+    function drawGraph() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear previous drawing
+
+        // Draw edges
+        ctx.strokeStyle = "#333";
+        ctx.lineWidth = 2;
+        for (let node in graph) {
+            graph[node].forEach(neighbor => {
+                const {x: x1, y: y1} = positions[node];
+                const {x: x2, y: y2} = positions[neighbor];
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+            });
+        }
+
+        // Draw nodes
+        for (let node in positions) {
+            const {x, y} = positions[node];
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, Math.PI * 2); // Node as a circle
+            ctx.fillStyle = "#4CAF50";
+            ctx.fill();
+            ctx.strokeStyle = "#000";
+            ctx.stroke();
+
+            // Label the node
+            ctx.fillStyle = "#FFF";
+            ctx.font = "16px Arial";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(node, x, y);
+        }
+    }
+    drawGraph();
+
+    // Traversal Functions
+    function bfs(startNode) {
+        const queue = [startNode];
+        const visited = new Set();
+        const output = [];
+
+        while (queue.length > 0) {
+            const node = queue.shift();
+            if (!visited.has(node)) {
+                visited.add(node);
+                output.push(node);
+                graph[node].forEach(neighbor => {
+                    if (!visited.has(neighbor)) {
+                        queue.push(neighbor);
+                    }
+                });
+            }
+        }
+        return output;
+    }
+
+    function dfsPreorder(node, visited = new Set(), output = []) {
+        if (visited.has(node)) return output;
+        visited.add(node);
+        output.push(node);
+
+        graph[node].forEach(neighbor => {
+            dfsPreorder(neighbor, visited, output);
+        });
+        return output;
+    }
+
+    function dfsPostorder(node, visited = new Set(), output = []) {
+        if (visited.has(node)) return output;
+        visited.add(node);
+
+        graph[node].forEach(neighbor => {
+            dfsPostorder(neighbor, visited, output);
+        });
+        output.push(node); // Push after visiting children for postorder
+        return output;
+    }
+
+    // Perform Traversal based on selected type
+    function performTraversal() {
+        const traversalType = document.getElementById("traversalType").value;
+        let result;
+
+        switch (traversalType) {
+            case "bfs":
+                result = bfs("A");
+                break;
+            case "dfsPreorder":
+                result = dfsPreorder("A");
+                break;
+            case "dfsPostorder":
+                result = dfsPostorder("A");
+                break;
+            default:
+                result = [];
+        }
+
+        document.getElementById("output").innerText = `Traversal Output: ${result.join(' -> ')}`;
+    }
+</script>
+
+</body>
+</html>
