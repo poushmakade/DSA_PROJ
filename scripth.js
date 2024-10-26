@@ -1,31 +1,27 @@
-// Hash function: Simple modulo 10 hash
-function hash(value) {
-    return value % 10;
-}
-
 function insertValue() {
-    const input = document.getElementById("inputValue");
-    const value = parseInt(input.value);
+    const inputValue = document.getElementById("inputValue").value;
+    const modulusValue = parseInt(document.getElementById("modulusValue").value);
 
-    if (isNaN(value)) {
-        alert("Please enter a valid number");
-        return;
+    if (!isNaN(inputValue) && inputValue !== "") {
+        const bucket = inputValue % modulusValue;
+        const bucketDiv = document.getElementById(`bucket-${bucket}`);
+        const valuesDiv = document.getElementById(`values-bucket-${bucket}`);
+
+        if (bucketDiv && valuesDiv) {
+            // Add animation for the bucket
+            bucketDiv.classList.add("insert-animation");
+            setTimeout(() => {
+                bucketDiv.classList.remove("insert-animation");
+            }, 800);
+
+            // Display the inserted value in the values area for the bucket
+            valuesDiv.textContent += ` ${inputValue}`;
+        } else {
+            alert("Bucket not available for selected modulus. Please try another modulus.");
+        }
+    } else {
+        alert("Please enter a valid number.");
     }
 
-    // Get hash index
-    const hashIndex = hash(value);
-    const bucket = document.getElementById(`bucket-${hashIndex}`);
-
-    // Create a new element to show the inserted value
-    const span = document.createElement("span");
-    span.innerHTML = value;
-
-    // Add animation class for visual effect
-    span.classList.add("insert-animation");
-
-    // Insert the value in the corresponding bucket
-    bucket.appendChild(span);
-
-    // Clear the input field after insertion
-    input.value = "";
+    document.getElementById("inputValue").value = "";
 }

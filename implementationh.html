@@ -6,11 +6,12 @@
     <title>Hash Table Visualization</title>
     <link rel="stylesheet" href="stylesh.css">
 </head>
-<body style="background-color: rgb(193, 237, 237);">
+<body style="background-color: rgb(244, 250, 250);">
 
-    <h1>Hash Table Visualization</h1>
+    <h1 style="color: rgb(75, 75, 207);">Hash Table Visualization</h1>
+    
+    <!-- Hash Table Buckets -->
     <div class="hash-table">
-        <!-- Creating 10 buckets for hash table -->
         <div class="bucket" id="bucket-0">0</div>
         <div class="bucket" id="bucket-1">1</div>
         <div class="bucket" id="bucket-2">2</div>
@@ -23,11 +24,32 @@
         <div class="bucket" id="bucket-9">9</div>
     </div>
 
-    <div class="controls">
-        <input type="text" id="inputValue" placeholder="Enter value">
-        <button onclick="insertValue()">Insert</button>
+    <!-- Display values inserted into each bucket -->
+    <div class="bucket-values">
+        <div id="values-bucket-0" class="bucket-value">Bucket 0: </div>
+        <div id="values-bucket-1" class="bucket-value">Bucket 1: </div>
+        <div id="values-bucket-2" class="bucket-value">Bucket 2: </div>
+        <div id="values-bucket-3" class="bucket-value">Bucket 3: </div>
+        <div id="values-bucket-4" class="bucket-value">Bucket 4: </div>
+        <div id="values-bucket-5" class="bucket-value">Bucket 5: </div>
+        <div id="values-bucket-6" class="bucket-value">Bucket 6: </div>
+        <div id="values-bucket-7" class="bucket-value">Bucket 7: </div>
+        <div id="values-bucket-8" class="bucket-value">Bucket 8: </div>
+        <div id="values-bucket-9" class="bucket-value">Bucket 9: </div>
     </div>
 
+    <div class="controls">
+        <input type="text" id="inputValue" placeholder="Enter value">
+        <label for="modulusValue">Select Modulus:</label>
+        <select id="modulusValue">
+            <option value="10" selected>10</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+            <option value="11">11</option>
+            <option value="13">13</option>
+        </select>
+        <button onclick="insertValue()">Insert</button>
+    </div>
     <script src="scripth.js"></script>
 </body>
 </html>
