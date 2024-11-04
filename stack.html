@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack - ALGO LAB</title>
+    <link rel="stylesheet" href="stack.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="algorithms.html">Algorithms</a>
+            <a href="credits.html">Credits</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Container for Stack Content -->
+    <div class="container">
+        <header>
+            <h1>Stack Data Structure</h1>
+        </header>
+
+        <!-- Stack Description Section -->
+        <section class="description">
+            <h2>Introduction to Stack</h2>
+            <p>
+                A Stack is a linear data structure that follows the Last In First Out (LIFO) principle. The last element added to the stack is the first one to be removed.
+            </p>
+            <p>
+                Common operations on a stack include:
+            </p>
+            <ul>
+                <li><strong>Push:</strong> Add an element to the top of the stack.</li>
+                <li><strong>Pop:</strong> Remove the top element from the stack.</li>
+                <li><strong>Peek/Top:</strong> Retrieve the top element without removing it.</li>
+            </ul>
+        </section>
+
+        <!-- Stack Implementation Section -->
+        <section class="implementation">
+            <h2>Stack Implementation in C</h2>
+            <p>
+                Here is a basic C example of stack operations:
+            </p>
+            <pre><code class="code-block">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;limits.h&gt;
+
+#define MAX 100 // Maximum size of the stack
+
+// Structure to represent a stack
+struct Stack {
+    int items[MAX];
+    int top;
+};
+
+// Function to create a stack and initialize its top
+struct Stack* createStack() {
+    struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));
+    stack->top = -1; // Initialize top to -1 indicating the stack is empty
+    return stack;
+}
+
+// Function to check if the stack is full
+int isFull(struct Stack* stack) {
+    return stack->top == MAX - 1;
+}
+
+// Function to check if the stack is empty
+int isEmpty(struct Stack* stack) {
+    return stack->top == -1;
+}
+
+// Function to add an item to the stack
+void push(struct Stack* stack, int item) {
+    if (isFull(stack)) {
+        printf("Stack Overflow! Unable to push %d\n", item);
+        return;
+    }
+    stack->items[++stack->top] = item; // Increment top and add item
+    printf("%d pushed to stack\n", item);
+}
+
+// Function to remove and return the top item from the stack
+int pop(struct Stack* stack) {
+    if (isEmpty(stack)) {
+        printf("Stack Underflow! Unable to pop\n");
+        return INT_MIN; // Return a special value for underflow
+    }
+    return stack->items[stack->top--]; // Return the top item and decrement top
+}
+
+// Function to return the top item of the stack without removing it
+int peek(struct Stack* stack) {
+    if (isEmpty(stack)) {
+        printf("Stack is empty!\n");
+        return INT_MIN; // Return a special value for empty stack
+    }
+    return stack->items[stack->top]; // Return the top item
+}
+
+// Function to display the contents of the stack
+void display(struct Stack* stack) {
+    if (isEmpty(stack)) {
+        printf("Stack is empty!\n");
+        return;
+    }
+    printf("Stack: ");
+    for (int i = 0; i <= stack->top; i++) {
+        printf("%d ", stack->items[i]);
+    }
+    printf("\n");
+}
+
+// Main function to test the stack implementation
+int main() {
+    struct Stack* stack = createStack();
+
+    push(stack, 10);
+    push(stack, 20);
+    push(stack, 30);
+    display(stack);
+
+    printf("%d popped from stack\n", pop(stack));
+    printf("Top element is %d\n", peek(stack));
+    display(stack);
+
+    return 0;
+}
+            </code></pre>
+        </section>
+
+        <!-- View Structure Button Section -->
+        <section class="view-structure">
+            <a href="structure.html" class="view-structure-button">View Structure</a>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <a href="algorithms.html" class="learn-more">Explore More Algorithms</a>
+            <p>&copy; 2024 Algo Lab. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
